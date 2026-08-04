@@ -93,3 +93,20 @@ li {
 	font-size: 0.95rem;
 	font-style: italic;
 }
+
+.visitor-counter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 72px;
+	border-top: 1px solid #000;
+	margin-top: 12px;
+	padding: 12px 20px 20px;
+	text-align: center;
+}
+
+.visitor-counter p {
+	margin: 0;
+	font-size: 0.95rem;
+	font-weight: 700;
+}
