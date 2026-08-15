@@ -1,0 +1,10 @@
+GET http://localhost:7071/api/visitorcount HTTP/1.1
+
+###
+
+GET http://localhost:7071/api/visitorcount?increment=false HTTP/1.1
+
+###
+
+POST http://localhost:7071/api/visitorcount/webhook
+content-type: application/json
