@@ -110,6 +110,56 @@ py -m venv .venv
 1. Press **Run/Debug (F5)** to run in the debugger. Select **Debug anyway** if prompted about local emulator not running.
 1. Send GET and POST requests to the `httpget` and `httppost` endpoints respectively using your HTTP test tool (or browser for `httpget`). If you have the [RestClient](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension installed, you can execute requests directly from the [`test.http`](test.http) project file.
 
+## Test the visitor counter locally
+
+Use these checks to validate the current webhook-based counter behavior.
+
+### 1) Manual endpoint test
+
+1. Start the function host:
+
+        ```powershell
+        func host start
+        ```
+
+1. Run the requests from [`test.http`](test.http):
+     - `GET /api/visitorcount` should increment `total` by 1 and return the updated value.
+     - `GET /api/visitorcount?increment=false` should return the current value without incrementing.
+     - `POST /api/visitorcount/webhook` should increment `total` by 1 and return the updated value.
+
+### 2) Automated unit tests
+
+The pytest suite in [`tests/test_function_app.py`](tests/test_function_app.py) validates:
+- route behavior for `visitorcount` and `visitorcount/webhook`
+- CORS preflight handling (`OPTIONS`)
+- increment and read-only flows
+- patch operation path (`/total`) for Cosmos updates
+
+Install test dependencies:
+
+```powershell
+python -m pip install -r requirements-dev.txt
+```
+
+Run tests:
+
+```powershell
+pytest -q
+```
+
+### 3) What to verify in Cosmos DB
+
+After calling increment routes, confirm your item in container `counter` updates:
+
+```json
+{
+    "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+    "total": 1
+}
+```
+
+Repeat calls and verify `total` continues increasing.
+
 ## Source Code
 
 The source code for both functions is in the [`function_app.py`](./function_app.py) code file. Azure Functions requires the use of the `@azure/functions` library.
