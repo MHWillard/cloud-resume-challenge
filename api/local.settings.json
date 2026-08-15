@@ -1,0 +1,14 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "python",
+        "COSMOS_ACCOUNT_NAME": "cloud-resume-nosql-db",
+        "COSMOS_ENDPOINT": "https://cloud-resume-nosql-db.documents.azure.com:443/",
+        "COSMOS_KEY": "",
+        "COSMOS_DATABASE_NAME": "cloudresumedb",
+        "COSMOS_CONTAINER_NAME": "counter",
+        "COSMOS_COUNTER_DOCUMENT_ID": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+        "COSMOS_COUNTER_PARTITION_KEY": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
+    }
+}

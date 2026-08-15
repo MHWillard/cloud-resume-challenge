@@ -5,13 +5,13 @@ STEPS FINISHED SO FAR:
 * HTML
 * CSS
 * Static website in Azure Storage
+* Domain purchased and DNS set up through Namecheap
 * Custom domain with HTTPS endpoint in Azure
-* DNS set up through Namecheap
 * Javascript visitor counter
+* Azure CosmosDB database for visitor counter
 * Source control (this repo)
 
 TO-DO:
-* Database for visitor counter
 * API to communicate between app and database
 * Infrastructure-as-code template
 * CI/CD for frontend and backend updates
