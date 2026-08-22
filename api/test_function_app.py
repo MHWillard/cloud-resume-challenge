@@ -1,14 +1,20 @@
 import json
+import os
+from pathlib import Path
 
 import azure.functions as func
+from dotenv import load_dotenv
 
 import function_app
 
+# Real resource names live in the gitignored .env file, not in source.
+load_dotenv(Path(__file__).parent / ".env")
+
 
 def test_visitor_count_increments_and_returns_total(mocker, monkeypatch):
-    monkeypatch.setenv("COSMOS_ENDPOINT", "https://cloud-resume-nosql-db.documents.azure.com:443/")
-    monkeypatch.setenv("COSMOS_DATABASE_NAME", "cloudresumedb")
-    monkeypatch.setenv("COSMOS_CONTAINER_NAME", "counter")
+    monkeypatch.setenv("COSMOS_ENDPOINT", os.environ["COSMOS_ENDPOINT"])
+    monkeypatch.setenv("COSMOS_DATABASE_NAME", os.environ["COSMOS_DATABASE_NAME"])
+    monkeypatch.setenv("COSMOS_CONTAINER_NAME", os.environ["COSMOS_CONTAINER_NAME"])
 
     mocker.patch("function_app.DefaultAzureCredential")
 
