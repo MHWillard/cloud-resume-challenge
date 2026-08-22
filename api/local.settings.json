@@ -9,6 +9,7 @@
         "COSMOS_DATABASE_NAME": "cloudresumedb",
         "COSMOS_CONTAINER_NAME": "counter",
         "COSMOS_COUNTER_DOCUMENT_ID": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-        "COSMOS_COUNTER_PARTITION_KEY": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
+        "COSMOS_COUNTER_PARTITION_KEY": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+        "API_URL": "http://localhost:7071/api/visitorcount"
     }
 }

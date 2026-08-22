@@ -1,1 +1,3 @@
 api/local.settings.json
+api/.env
+env.js
