@@ -7,8 +7,7 @@ from azure.identity import DefaultAzureCredential
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-DOCUMENT_ID = "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
-
+DOCUMENT_ID = os.environ["COSMOS_DOCUMENT_ID"]
 
 @app.route(route="visitorcount", methods=["GET"])
 def visitor_count(req: func.HttpRequest) -> func.HttpResponse:

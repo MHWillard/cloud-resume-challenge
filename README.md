@@ -12,7 +12,8 @@ STEPS FINISHED SO FAR:
 * Source control (this repo)
 
 TO-DO:
-* API to communicate between app and database
+* Azure Function app for API
+* API to communicate between app and database with environmental variables
 * Infrastructure-as-code template
 * CI/CD for frontend and backend updates
 * Blog post about project on personal website (https://mattwillard.dev/)
