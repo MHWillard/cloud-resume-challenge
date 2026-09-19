@@ -5,4 +5,4 @@ env.local.js
 commands.txt
 __azurite*
 __blobstorage*
-.vscode
+.vscode/
