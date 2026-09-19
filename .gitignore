@@ -1,3 +1,7 @@
 api/local.settings.json
 api/.env
 env.js
+env.local.js
+commands.txt
+__azurite*
+__blobstorage*

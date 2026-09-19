@@ -4,8 +4,11 @@ import os
 
 from azure.cosmos import CosmosClient
 from azure.identity import DefaultAzureCredential
+from dotenv import load_dotenv
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+
+load_dotenv()
 
 DOCUMENT_ID = os.environ["COSMOS_DOCUMENT_ID"]
 

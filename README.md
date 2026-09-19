@@ -1,22 +1,10 @@
-Static website based on the Cloud Resume Challenge. This website specifically uses Azure. I'm still building this website out so I'll update this README as I go.
-Find the challenge here: https://cloudresumechallenge.dev/docs/the-challenge/azure/
-
-STEPS FINISHED SO FAR:
-* HTML
-* CSS
-* Static website in Azure Storage
-* Domain purchased and DNS set up through Namecheap
-* Custom domain with HTTPS endpoint in Azure
-* Javascript visitor counter
+Repo for a static website based on the Cloud Resume Challenge, hosted in Azure. 
+I've shut down the Azure subscriptions and resources involved in hosting this website to limit further costs, but the following resources were used:
+* Static website hosting in Azure Storage Account
+* Azure HTTPS endpoint tied to custom domain
 * Azure CosmosDB database for visitor counter
-* Source control (this repo)
+* Azure Function App for API written in Python
 
-TO-DO:
-* Azure Function app for API
-* API to communicate between app and database with environmental variables
-* Infrastructure-as-code template
-* CI/CD for frontend and backend updates
-* Blog post about project on personal website (https://mattwillard.dev/)
+GitHub Copilot was used to scaffold frontend and backend code and was orchestrated by a human.
 
-
-The website can be accessed here: https://mattwillardcloudresume.com/
+Find the challenge here: https://cloudresumechallenge.dev/docs/the-challenge/azure/
